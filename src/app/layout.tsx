@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL("https://lumina-landing-page-eight.vercel.app/"),
   title: {
     default: "Lumina — Software a medida para empresas salvadoreñas",
     template: "%s | Lumina",
@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     "sistemas empresariales",
     "El Salvador",
     "Lumina",
+    "HRM/HRIS",
+    "EMR/EHR",
+    "HIS",
+    "Booking System",
+    "E-commerce",
   ],
   authors: [{ name: "Lumina" }],
   creator: "Lumina",

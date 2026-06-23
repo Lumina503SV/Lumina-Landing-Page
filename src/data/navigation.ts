@@ -32,18 +32,14 @@ export const services = [
     accent: "desk" as const, // teal
     description:
       "Portales y aplicaciones que tus clientes usan desde el navegador, rápidas y listas para crecer contigo.",
-    points: [
-      "Portales de cliente",
-      "Tiendas y catálogos",
-      "Integración de pagos",
-    ],
+    points: ["Portales de cliente", "Tiendas y catálogos", "Integraciones"],
   },
   {
     name: "Apps móviles",
     accent: "order" as const, // coral
     description:
-      "Aplicaciones Android e iOS conectadas a tus sistemas, pensadas para el día a día de tu equipo y tus usuarios.",
-    points: ["Android e iOS", "Notificaciones", "Funciona sin conexión"],
+      "Aplicaciones Android  conectadas a tus sistemas, pensadas para el día a día de tu equipo y tus usuarios.",
+    points: ["Android", "Notificaciones", "Funciona sin conexión"],
   },
 ];
 
@@ -87,8 +83,8 @@ export const faqs = [
     q: "¿Trabajan con empresas fuera de El Salvador?",
     a: "Sí, trabajamos de forma remota con clientes de la región. Nuestra base y nuestro contexto son salvadoreños.",
   },
-  {
-    q: "¿Yo soy dueño del código?",
-    a: "Totalmente. Al finalizar, el código y los datos son tuyos. Te entregamos todo y te explicamos cómo está hecho.",
-  },
+  // {
+  //   q: "¿Yo soy dueño del código?",
+  //   a: "Totalmente. Al finalizar, el código y los datos son tuyos. Te entregamos todo y te explicamos cómo está hecho.",
+  // },
 ];
