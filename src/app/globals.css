@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand */
+  --indigo-lumina: #3f35c7;
+  --ambar-lumina: #f8a91b;
+
+  /* System */
+  --tinta-lumina: #13112b;
+  --indigo-profundo-lumina: #2a248a;
+  --indigo-niebla-lumina: #e8e7fb;
+
+  /* Neutral */
+  --hard-text-lumina: #15132e;
+  --body-lumina: #3a3956;
+  --tenue-lumina: #6e6d86;
+  --border-lumina: #e4e3ef;
+  --background-lumina: #f7f7fb;
+
+  /* Status */
+  --success-lumina: #15b374;
+  --warning-lumina: #f2660a;
+  --error-lumina: #e5484d;
+  --info-lumina: #3e63dd;
+
+  /* Modules */
+  --desk-lumina: #14b8c4;
+  --order-lumina: #fb6f5a;
+  --core-lumina: #3f35c7;
+}
+
+@theme {
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+
+  /* Brand */
+  --color-primary: var(--indigo-lumina);
+  --color-secondary: var(--ambar-lumina);
+  --color-ink: var(--tinta-lumina);
+  --color-indigo-deep: var(--indigo-profundo-lumina);
+  --color-indigo-mist: var(--indigo-niebla-lumina);
+
+  /* Text */
+  --color-heading: var(--hard-text-lumina);
+  --color-body: var(--body-lumina);
+  --color-muted: var(--tenue-lumina);
+
+  /* UI */
+  --color-background: var(--background-lumina);
+  --color-border: var(--border-lumina);
+
+  /* Status */
+  --color-success: var(--success-lumina);
+  --color-warning: var(--warning-lumina);
+  --color-error: var(--error-lumina);
+  --color-info: var(--info-lumina);
+
+  /* Modules */
+  --color-desk: var(--desk-lumina);
+  --color-order: var(--order-lumina);
+  --color-core: var(--core-lumina);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-heading);
+  }
+
+  /* Desplazamiento suave para los anclajes del navbar */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  ::selection {
+    background-color: var(--ambar-lumina);
+    color: var(--tinta-lumina);
+  }
+}
+
+/* Animación de entrada sutil, respetando reduce-motion */
+@keyframes lumina-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lumina-rise {
+  animation: lumina-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .lumina-rise {
+    animation: none;
+  }
+}

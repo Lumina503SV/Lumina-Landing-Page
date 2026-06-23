@@ -1,0 +1,92 @@
+import { services } from "@/data/navigation";
+
+// Clases completas y estáticas para que Tailwind las detecte (no usar interpolación de clases)
+const accent = {
+  core: {
+    soft: "bg-core/10",
+    text: "text-core",
+    border: "group-hover:border-core/50",
+  },
+  desk: {
+    soft: "bg-desk/10",
+    text: "text-desk",
+    border: "group-hover:border-desk/50",
+  },
+  order: {
+    soft: "bg-order/10",
+    text: "text-order",
+    border: "group-hover:border-order/50",
+  },
+} as const;
+
+function CheckIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      className={className}
+      aria-hidden
+    >
+      <path
+        fillRule="evenodd"
+        d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 1 1 1.4-1.4l3.3 3.3 6.8-6.8a1 1 0 0 1 1.4 0Z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
+export default function Services() {
+  return (
+    <section
+      id="servicios"
+      className="mx-auto max-w-6xl px-6 py-24 lg:px-8 lg:py-28"
+    >
+      <div className="max-w-2xl">
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+          Servicios
+        </p>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          Lo que construimos para tu empresa
+        </h2>
+        <p className="mt-4 text-lg text-body">
+          No vendemos plantillas. Cada proyecto se construye alrededor de cómo
+          funciona tu negocio.
+        </p>
+      </div>
+
+      <div className="mt-14 grid gap-6 md:grid-cols-3">
+        {services.map((service) => {
+          const a = accent[service.accent];
+          return (
+            <article
+              key={service.name}
+              className={`group flex flex-col rounded-2xl border border-border bg-white p-8 transition-colors ${a.border}`}
+            >
+              <div
+                className={`flex h-12 w-12 items-center justify-center rounded-xl ${a.soft}`}
+              >
+                <span className={`h-3 w-3 rounded-full ${a.text} bg-current`} />
+              </div>
+
+              <h3 className="mt-6 text-xl font-bold">{service.name}</h3>
+              <p className="mt-3 flex-1 text-body">{service.description}</p>
+
+              <ul className="mt-6 space-y-2.5 border-t border-border pt-6">
+                {service.points.map((point) => (
+                  <li
+                    key={point}
+                    className="flex items-center gap-2.5 text-sm text-body"
+                  >
+                    <CheckIcon className={`h-4 w-4 shrink-0 ${a.text}`} />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
