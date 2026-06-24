@@ -32,7 +32,7 @@ export const services = [
     accent: "desk" as const, // teal
     description:
       "Portales y aplicaciones que tus clientes usan desde el navegador, rápidas y listas para crecer contigo.",
-    points: ["Portales de cliente", "Tiendas y catálogos", "Integraciones"],
+    points: ["Portales de cliente", "Tiendas y catálogos", "Landing Pages"],
   },
   {
     name: "Apps móviles",

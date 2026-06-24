@@ -1,20 +1,16 @@
 import { navLinks, site } from "@/data/navigation";
+import Image from "next/image";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-white">
+    <footer className="border-t border-border bg-border/50 backdrop-blur">
       <div className="mx-auto max-w-6xl px-6 py-12 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
           <div>
             <div className="flex items-center gap-2">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary">
-                <span className="h-2 w-2 rounded-full bg-secondary" />
-              </span>
-              <span className="font-display text-lg font-bold text-heading">
-                {site.name}
-              </span>
+              <Image src="/brand.png" width={75} height={75} alt="Brand" />
             </div>
             <p className="mt-3 max-w-xs text-sm text-muted">{site.tagline}.</p>
           </div>

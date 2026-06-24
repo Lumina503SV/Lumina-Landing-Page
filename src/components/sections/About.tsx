@@ -27,14 +27,6 @@ export default function About() {
             <div className="mt-8 flex gap-8">
               <div>
                 <p className="font-display text-3xl font-bold text-heading">
-                  100%
-                </p>
-                <p className="mt-1 text-sm text-muted">
-                  Código tuyo al entregar
-                </p>
-              </div>
-              <div>
-                <p className="font-display text-3xl font-bold text-heading">
                   Local
                 </p>
                 <p className="mt-1 text-sm text-muted">

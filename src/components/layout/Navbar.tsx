@@ -1,17 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { navLinks, site } from "@/data/navigation";
+import { navLinks } from "@/data/navigation";
+import Image from "next/image";
 
 function Logo() {
   return (
-    <a href="#inicio" className="flex items-center gap-2 group">
-      <span className="relative flex h-7 w-7 items-center justify-center rounded-lg bg-primary">
-        <span className="h-2 w-2 rounded-full bg-secondary transition-transform group-hover:scale-125" />
-      </span>
-      <span className="font-display text-lg font-bold tracking-tight text-heading">
-        {site.name}
-      </span>
+    <a href="#inicio" className="flex items-center gap-8 group my-4">
+      <Image src="/brand.png" width={75} height={75} alt="Brand" />
     </a>
   );
 }
@@ -20,8 +16,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur">
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-8">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-border/50 backdrop-blur">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 lg:px-8">
         <Logo />
 
         {/* Enlaces escritorio */}
@@ -40,7 +36,7 @@ export default function Navbar() {
 
         <a
           href="#contacto"
-          className="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-deep md:inline-block"
+          className="hidden rounded-full bg-primary px-5 py-4 text-sm font-semibold text-white transition-colors hover:bg-indigo-deep md:inline-block"
         >
           Conversemos
         </a>
