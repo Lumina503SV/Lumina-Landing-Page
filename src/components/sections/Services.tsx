@@ -1,3 +1,4 @@
+import { LayoutDashboard, Globe, Smartphone } from "lucide-react";
 import { services } from "@/data/navigation";
 
 // Clases completas y estáticas para que Tailwind las detecte (no usar interpolación de clases)
@@ -6,16 +7,19 @@ const accent = {
     soft: "bg-core/10",
     text: "text-core",
     border: "group-hover:border-core/50",
+    Icon: LayoutDashboard,
   },
   desk: {
     soft: "bg-desk/10",
     text: "text-desk",
     border: "group-hover:border-desk/50",
+    Icon: Globe,
   },
   order: {
     soft: "bg-order/10",
     text: "text-order",
     border: "group-hover:border-order/50",
+    Icon: Smartphone,
   },
 } as const;
 
@@ -50,8 +54,8 @@ export default function Services() {
           Lo que construimos para tu empresa
         </h2>
         <p className="mt-4 text-lg text-body">
-          No vendemos plantillas. Cada proyecto se construye alrededor de cómo
-          funciona tu negocio.
+          {/* Se debe mejorar la base */}
+          Cada proyecto se construye alrededor de cómo funciona tu negocio.
         </p>
       </div>
 
@@ -66,7 +70,7 @@ export default function Services() {
               <div
                 className={`flex h-12 w-12 items-center justify-center rounded-xl ${a.soft}`}
               >
-                <span className={`h-3 w-3 rounded-full ${a.text} bg-current`} />
+                <a.Icon className={`h-6 w-6 ${a.text}`} strokeWidth={1.75} />
               </div>
 
               <h3 className="mt-6 text-xl font-bold">{service.name}</h3>
