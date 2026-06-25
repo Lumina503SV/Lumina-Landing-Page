@@ -1,5 +1,5 @@
 import { LayoutDashboard, Globe, Smartphone } from "lucide-react";
-import { services } from "@/data/navigation";
+import { servicesSoftware, servicesMarketing } from "@/data/navigation";
 
 // Clases completas y estáticas para que Tailwind las detecte (no usar interpolación de clases)
 const accent = {
@@ -46,51 +46,101 @@ export default function Services() {
       id="servicios"
       className="mx-auto max-w-6xl px-6 py-24 lg:px-8 lg:py-28"
     >
-      <div className="max-w-2xl">
+      <div className="max-w-3xl">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Servicios
         </p>
         <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-          Lo que construimos para tu empresa
+          Lo que ofrecemos para tu empresa
         </h2>
         <p className="mt-4 text-lg text-body">
-          {/* Se debe mejorar la base */}
-          Cada proyecto se construye alrededor de cómo funciona tu negocio.
+          Cada proyecto se construye apartir de tus necesidades y en como
+          funciona tu negocio.
         </p>
       </div>
 
-      <div className="mt-14 grid gap-6 md:grid-cols-3">
-        {services.map((service) => {
-          const a = accent[service.accent];
-          return (
-            <article
-              key={service.name}
-              className={`group flex flex-col rounded-2xl border border-border bg-white p-8 transition-colors ${a.border}`}
-            >
-              <div
-                className={`flex h-12 w-12 items-center justify-center rounded-xl ${a.soft}`}
+      <section className="mt-15 flex flex-col justify-center">
+        <div className="flex w-full justify-center">
+          <h1 className="text-4xl italic text-center font-bold text-primary border-b-2 border-secondary">
+            Tecnología
+          </h1>
+        </div>
+        <div className="mt-5 grid gap-6 md:grid-cols-3">
+          {servicesSoftware.map((service) => {
+            const a = accent[service.accent];
+            return (
+              <article
+                key={service.name}
+                className={`group flex flex-col rounded-2xl border border-border bg-white p-8 transition-colors ${a.border}`}
               >
-                <a.Icon className={`h-6 w-6 ${a.text}`} strokeWidth={1.75} />
-              </div>
+                <div
+                  className={`flex h-12 w-12 items-center justify-center rounded-xl ${a.soft}`}
+                >
+                  <a.Icon className={`h-6 w-6 ${a.text}`} strokeWidth={1.75} />
+                </div>
 
-              <h3 className="mt-6 text-xl font-bold">{service.name}</h3>
-              <p className="mt-3 flex-1 text-body">{service.description}</p>
+                <h3 className="mt-6 text-xl font-bold">{service.name}</h3>
+                <p className="mt-3 flex-1 text-body">{service.description}</p>
 
-              <ul className="mt-6 space-y-2.5 border-t border-border pt-6">
-                {service.points.map((point) => (
-                  <li
-                    key={point}
-                    className="flex items-center gap-2.5 text-sm text-body"
+                <ul className="mt-6 space-y-2.5 border-t border-border pt-6">
+                  {service.points.map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-center gap-2.5 text-sm text-body"
+                    >
+                      <CheckIcon className={`h-4 w-4 shrink-0 ${a.text}`} />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            );
+          })}
+        </div>
+
+        <section className="mt-5 flex flex-col justify-center">
+          <div className="flex w-full justify-center mt-20">
+            <h1 className="text-4xl italic text-center font-bold text-primary border-b-2 border-secondary">
+              Marketing
+            </h1>
+          </div>
+          <div className="mt-5 grid gap-6 md:grid-cols-3">
+            {servicesMarketing.map((service) => {
+              const a = accent[service.accent];
+              return (
+                <article
+                  key={service.name}
+                  className={`group flex flex-col rounded-2xl border border-border bg-white p-8 transition-colors ${a.border}`}
+                >
+                  <div
+                    className={`flex h-12 w-12 items-center justify-center rounded-xl ${a.soft}`}
                   >
-                    <CheckIcon className={`h-4 w-4 shrink-0 ${a.text}`} />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          );
-        })}
-      </div>
+                    <a.Icon
+                      className={`h-6 w-6 ${a.text}`}
+                      strokeWidth={1.75}
+                    />
+                  </div>
+
+                  <h3 className="mt-6 text-xl font-bold">{service.name}</h3>
+                  <p className="mt-3 flex-1 text-body">{service.description}</p>
+
+                  <ul className="mt-6 space-y-2.5 border-t border-border pt-6">
+                    {service.points.map((point) => (
+                      <li
+                        key={point}
+                        className="flex items-center gap-2.5 text-sm text-body"
+                      >
+                        <CheckIcon className={`h-4 w-4 shrink-0 ${a.text}`} />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      </section>
     </section>
   );
 }

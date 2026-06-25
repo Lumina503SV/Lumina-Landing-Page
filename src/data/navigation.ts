@@ -15,7 +15,14 @@ export const navLinks = [
   { label: "Contacto", href: "#contacto" },
 ] as const;
 
-export const services = [
+export const servicesSoftware = [
+  {
+    name: "Desarrollo web",
+    accent: "desk" as const, // teal
+    description:
+      "Catalogos , Sistemas Corporativo, Landing Page y aplicaciones que tus clientes usan desde el navegador, rápidas y listas para crecer contigo.",
+    points: ["Web Corporativo", "Catálogo Web", "Landing pages"],
+  },
   {
     name: "Sistemas a medida",
     accent: "core" as const, // indigo
@@ -28,18 +35,35 @@ export const services = [
     ],
   },
   {
-    name: "Aplicaciones web",
-    accent: "desk" as const, // teal
-    description:
-      "Portales y aplicaciones que tus clientes usan desde el navegador, rápidas y listas para crecer contigo.",
-    points: ["Portales de cliente", "Tiendas y catálogos", "Landing Pages"],
-  },
-  {
     name: "Apps móviles",
     accent: "order" as const, // coral
     description:
       "Aplicaciones Android  conectadas a tus sistemas, pensadas para el día a día de tu equipo y tus usuarios.",
-    points: ["Android", "Notificaciones", "Funciona sin conexión"],
+    points: ["Apps para clientes", "Apps para empleados", "Apps de citas"],
+  },
+];
+
+export const servicesMarketing = [
+  {
+    name: "Diseño de Marca",
+    accent: "core" as const, // indigo
+    description:
+      "Construimos la identidad visual de tu negocio desde cero: un logo y una imagen que se vean igual de profesionales en redes, en la calle y en tu local.",
+    points: ["Logo", "Identidad visual", "Manual de marca"],
+  },
+  {
+    name: "Gestión de Redes Sociales",
+    accent: "order" as const, // teal
+    description:
+      "Administramos tus redes para que publiques de forma constante y profesional, sin que tengas que estar pensando todos los días qué subir.",
+    points: ["Facebook", "Instagram", "LinkedIn"],
+  },
+  {
+    name: "Creación de Contenido",
+    accent: "desk" as const, // coral
+    description:
+      "Producimos las piezas que necesitas para verte bien en redes: diseños, videos cortos y textos que conectan con tu cliente y venden.",
+    points: ["Diseños", "Videos cortos", "Copywriting"],
   },
 ];
 
